@@ -1,0 +1,21 @@
+/**
+ * resources/css/app.css — Entry Tailwind CSS v4 (PRD §4.4).
+ *
+ * Tailwind diinstal via NPM (@tailwindcss/vite) dan di-compile lokal oleh Vite.
+ * Dilarang memakai <link> CDN mentah. Sesuai PRD §7 revisi: murni utility class
+ * Tailwind, tanpa CSS kustom — avatar, badge, dan panel semuanya memakai utility.
+ */
+@import 'tailwindcss';
+
+/* Dark mode class-based: class "dark" pada <html> (dipasang layout dari $isDark)
+   mengaktifkan seluruh utility bervarian "dark:". Ini konfigurasi resmi Tailwind,
+   bukan CSS kustom komponen — seluruh tampilan tetap murni utility class. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
